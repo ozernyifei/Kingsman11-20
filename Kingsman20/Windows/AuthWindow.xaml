@@ -1,0 +1,83 @@
+﻿<Window x:Class="Kingsman20.Windows.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kingsman20.Windows"
+        mc:Ignorable="d"
+        Title="AuthWindow" Height="400" Width="850">
+    <Grid>
+        <DockPanel>
+            <Image Source="C:\Users\Toadles\source\repos\Kingsman20\Kingsman20\Res\dalle_atelier1.jpg" Height="450" Width="385"  />
+            <StackPanel Orientation="Vertical" Width="165">
+                <TextBlock Text="Kingsman"
+                           FontSize="28"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"
+                           Margin="0 10 0 0"/>
+                <TextBlock Text="Авторизация"
+                           FontSize="18"
+                           HorizontalAlignment="Center"
+                           Margin="0 60 0 0"/>
+                <TextBlock Text="Login"
+                           Margin="10 50 0 0"
+                           FontSize="8"
+                           Foreground="Gray"/>
+                <TextBox x:Name="TbLogin" 
+                         Text="Ваш логин"
+                         Width="150" 
+                         Height="20"
+                         Margin="0 5 0 0"
+                         BorderThickness="0 0 0 1"
+                         BorderBrush="DarkGray"
+                         FontSize="12"
+                         Foreground="DarkGray"
+                         GotFocus="TbLogin_GotFocus"
+                         LostFocus="TbLogin_LostFocus"
+                         />
+                <TextBlock Text="Password"
+                           Margin="10 10 0 0"
+                           FontSize="8"
+                           Foreground="Gray"/>
+                <PasswordBox Name="PbPassword"
+                             Width="150"
+                             Height="20"
+                             Margin="0 5 0 0"
+                             BorderThickness="0 0 0 1"
+                             BorderBrush="DarkGray"
+                             GotFocus="PbPassword_GotFocus"
+                             Tag="Ваш пароль"
+                             Foreground="DarkGray"
+                             LostFocus="PbPassword_LostFocus"
+                             Password="Password"
+                             />
+
+                <Button Name="btnSignIn" 
+                        Click="BtnSignIn_Click"
+                        Width="100"
+                        Height="30" 
+                        Margin="0 40 0 0" 
+                        Content="Войти"
+                        Background="Gray"
+                        Foreground="White"
+                        BorderThickness="0 0 0 0">
+
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" 
+                                        Value="14"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+                <TextBlock x:Name="BtnReg" 
+                           Text="Регистрация"
+                           MouseLeftButtonUp="BtnReg_MouseLeftButtonUp"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Bottom"
+                           Margin="0 10 0 0"
+                           FontSize="8"/>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Window>

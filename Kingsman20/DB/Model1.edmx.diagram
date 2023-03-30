@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f29b28f9d56649fe966f1f49f9ac2e9f" Name="Diagram1">
+        <EntityTypeShape EntityType="kingsmanModel.Client" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="kingsmanModel.Color" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="kingsmanModel.Employee" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kingsmanModel.Gender" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="kingsmanModel.Material" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kingsmanModel.Order" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="kingsmanModel.OrderService" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="kingsmanModel.OrderSuit" Width="1.5" PointX="7.5" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="kingsmanModel.Position" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="kingsmanModel.Service" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="kingsmanModel.ServicePhoto" Width="1.5" PointX="7.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="kingsmanModel.ServiceType" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="kingsmanModel.Suit" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="kingsmanModel.sysdiagrams" Width="1.5" PointX="9.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="kingsmanModel.Vendor" Width="1.5" PointX="0.75" PointY="11.625" IsExpanded="true" />
+        <AssociationConnector Association="kingsmanModel.FK__Client__GenderCo__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="kingsmanModel.FK__Order__ClientID__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="kingsmanModel.FK__Suit__ColorID__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="kingsmanModel.FK__Employee__Gender__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="kingsmanModel.FK__Employee__Positi__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="kingsmanModel.FK__Order__EmployeeI__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="kingsmanModel.FK__Suit__MaterialID__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="kingsmanModel.FK_Material_Vendor" ManuallyRouted="false" />
+        <AssociationConnector Association="kingsmanModel.FK__OrderServ__Order__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="kingsmanModel.FK__OrderSuit__Order__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="kingsmanModel.FK__OrderServ__Servi__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="kingsmanModel.FK__OrderSuit__SuitI__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="kingsmanModel.FK_Service_ServiceType" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
