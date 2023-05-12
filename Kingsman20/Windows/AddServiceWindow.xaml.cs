@@ -31,7 +31,7 @@ namespace Kingsman20.Windows
             InitializeComponent();
 
             CmbTypeService.ItemsSource = ClassHelper.EF.Context.ServiceType.ToList();
-            CmbTypeService.DisplayMemberPath = "TypeName";
+            CmbTypeService.DisplayMemberPath = "ServiceTypeName";
             CmbTypeService.SelectedIndex = 0;
         }
 
@@ -42,7 +42,7 @@ namespace Kingsman20.Windows
             editService = service;
 
             CmbTypeService.ItemsSource = ClassHelper.EF.Context.ServiceType.ToList();
-            CmbTypeService.DisplayMemberPath = "TypeName";
+            CmbTypeService.DisplayMemberPath = "ServiceTypeName";
 
             ImgImageService.Source = new BitmapImage(new Uri(editService.ServicePhoto));
             TbNameService.Text = editService.ServiceName;
