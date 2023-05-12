@@ -29,5 +29,32 @@ namespace Kingsman20.Windows
         {
             LvService.ItemsSource = ClassHelper.EF.Context.Service.ToList();
         }
+
+        private void BtnAddService_Click(object sender, RoutedEventArgs e)
+        {
+            AddServiceWindow addServiceWindow = new AddServiceWindow(); 
+            addServiceWindow.ShowDialog();
+
+            // Обновляем лист
+            GetListService();
+        }
+
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+
+            if (button == null)
+            {
+                return;
+            }
+
+            var service = button.DataContext as DB.Service; // получаем выбранную запись
+
+
+            EditServiceWindow editServiceWindow = new EditServiceWindow(service);
+            editServiceWindow.ShowDialog();
+
+            GetListService();
+        }
     }
 }

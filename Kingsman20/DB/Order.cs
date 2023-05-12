@@ -24,8 +24,7 @@ namespace Kingsman20.DB
         public int ID { get; set; }
         public Nullable<int> ClientID { get; set; }
         public Nullable<int> EmployeeID { get; set; }
-        public Nullable<System.DateTime> CreationDate { get; set; }
-        public Nullable<System.DateTime> DeliveryDate { get; set; }
+        public Nullable<System.DateTime> OrderDate { get; set; }
         public Nullable<decimal> TotalSum { get; set; }
     
         public virtual Client Client { get; set; }

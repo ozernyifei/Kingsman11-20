@@ -8,7 +8,7 @@
         Title="AuthWindow" Height="400" Width="850">
     <Grid>
         <DockPanel>
-            <Image Source="C:\Users\Toadles\source\repos\Kingsman20\Kingsman20\Res\dalle_atelier1.jpg" Height="450" Width="385"  />
+            <Image Source="C:\Users\Toadles\source\repos\Kingsman11-20\Kingsman20\Res\dalle_atelier1.jpg" Height="450" Width="385"  />
             <StackPanel Orientation="Vertical" Width="165">
                 <TextBlock Text="Kingsman"
                            FontSize="28"

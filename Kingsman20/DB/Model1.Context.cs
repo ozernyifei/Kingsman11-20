@@ -37,7 +37,6 @@ namespace Kingsman20.DB
         public virtual DbSet<OrderSuit> OrderSuit { get; set; }
         public virtual DbSet<Position> Position { get; set; }
         public virtual DbSet<Service> Service { get; set; }
-        public virtual DbSet<ServicePhoto> ServicePhoto { get; set; }
         public virtual DbSet<ServiceType> ServiceType { get; set; }
         public virtual DbSet<Suit> Suit { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }

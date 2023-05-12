@@ -17,6 +17,7 @@ namespace Kingsman20.DB
         public int ID { get; set; }
         public Nullable<int> OrderID { get; set; }
         public Nullable<int> ServiceID { get; set; }
+        public Nullable<int> Quantity { get; set; }
     
         public virtual Order Order { get; set; }
         public virtual Service Service { get; set; }

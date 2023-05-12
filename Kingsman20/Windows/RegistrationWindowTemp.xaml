@@ -9,7 +9,7 @@
     <Grid>
         <DockPanel>
             <Image Source="C:\Users\Toadles\source\repos\Kingsman20\Kingsman20\Res\dalle_atelier1.jpg"  />
-            <StackPanel Orientation="Vertical">
+            <StackPanel VerticalAlignment="Center">
                 <TextBlock Text="Kingsman"
                            FontSize="28"
                            FontWeight="Bold"
@@ -19,9 +19,6 @@
                            FontSize="18"
                            HorizontalAlignment="Center"
                            Margin="0 25 0 25"/>
-
-
-
 
                 <Grid HorizontalAlignment="Center" 
                       VerticalAlignment="Center"
@@ -45,25 +42,29 @@
                     <TextBlock Grid.Row="0"
                              Grid.Column="0"
                              Style="{StaticResource Reg_TbStyle}"
-                             Text="Ваше имя"/>
+                             Text="Введите имя *"/>
 
                     <TextBlock Grid.Row="0"
                              Grid.Column="1"
                              Style="{StaticResource Reg_TbStyle}"
-                             Text="Ваше имя"/>
+                             Text="Введите фамилию *"/>
 
                     
-                    <TextBox 
+                    <TextBox x:Name="TbFirstName"
                              Grid.Row="1"                            
                              Grid.Column="0"
-                             Text="Иванов"
+                             GotFocus="Tb_GotFocus"
+                             LostFocus="Tb_LostFocus"
+                             Tag="Иванов"
                              Style="{StaticResource Reg_TbxStyle}"
                              />
-                    <TextBox 
+                    <TextBox x:Name="TbSecondName"
                              Grid.Row="1" 
                              Grid.Column="1"
+                             GotFocus="Tb_GotFocus"
+                             LostFocus="Tb_LostFocus"
                              Style="{StaticResource Reg_TbxStyle}"
-                             Text="Иванов"
+                             Tag="Иван"
                              />
 
                     <!--l-->
@@ -71,80 +72,94 @@
                     <TextBlock Grid.Row="2"
                              Grid.Column="0"
                              Style="{StaticResource Reg_TbStyle}"
-                             Text="Ваше имя"/>
+                             Text="Введите отчество"/>
 
                     <TextBlock Grid.Row="2"
                              Grid.Column="1"
                              Style="{StaticResource Reg_TbStyle}"
-                             Text="Ваше имя"/>
+                             Text="Введите телефон *"/>
 
-                    <TextBox 
+                    <TextBox x:Name="TbPatronymic"
                              Grid.Row="3"                            
                              Grid.Column="0"
-                             Text="Иванов"
+                             Tag="Иванович"
+                             GotFocus="Tb_GotFocus"
+                             LostFocus="Tb_LostFocus"
                              Style="{StaticResource Reg_TbxStyle}"
                              />
-                    <TextBox 
+                    <TextBox x:Name="TbPhone"
                              Grid.Row="3" 
                              Grid.Column="1"
+                             GotFocus="Tb_GotFocus"
+                             LostFocus="Tb_LostFocus"
                              Style="{StaticResource Reg_TbxStyle}"
-                             Text="Иванов"
+                             Tag="+79123456789"
                              />
 
                     <TextBlock Grid.Row="4"
                              Grid.Column="0"
                              Style="{StaticResource Reg_TbStyle}"
-                             Text="Ваше имя"/>
+                             Text="Введите почту"/>
 
                     <TextBlock Grid.Row="4"
                              Grid.Column="1"
                              Style="{StaticResource Reg_TbStyle}"
-                             Text="Ваше имя"/>
+                             Text="Выберите пол *"/>
 
-                    <TextBox 
+                    <TextBox x:Name="TbEmail"
                              Grid.Row="5"                            
                              Grid.Column="0"
-                             Text="Иванов"
+                             GotFocus="Tb_GotFocus"
+                             LostFocus="Tb_LostFocus"
+                             Tag="IvanovI@example.com"
                              Style="{StaticResource Reg_TbxStyle}"
                              />
-                    <TextBox 
+                    <ComboBox x:Name="CmbGender"
                              Grid.Row="5" 
                              Grid.Column="1"
-                             Style="{StaticResource Reg_TbxStyle}"
-                             Text="Иванов"
-                             />
+                             Style="{StaticResource Reg_CmbxStyle}">
+                        <ComboBox.ItemContainerStyle>
+                            <StaticResource ResourceKey="RegCmbxItemStyle"/>
+                        </ComboBox.ItemContainerStyle>
+
+                    </ComboBox>
+                        
 
                     <TextBlock Grid.Row="6"
                              Grid.Column="0"
                              Style="{StaticResource Reg_TbStyle}"
-                             Text="Ваше имя"/>
+                             Text="Введите логин *"/>
 
                     <TextBlock Grid.Row="6"
                              Grid.Column="1"
                              Style="{StaticResource Reg_TbStyle}"
-                             Text="Ваше имя"/>
+                             Text="Введите пароль *"/>
 
-                    <TextBox 
+                    <TextBox x:Name="TbLogin"
                              Grid.Row="7"                            
                              Grid.Column="0"
-                             Text="Иванов"
+                             Tag="IvanovIvan"
+                             GotFocus="Tb_GotFocus"
+                             LostFocus="Tb_LostFocus"
                              Style="{StaticResource Reg_TbxStyle}"
                              />
-                    <TextBox 
+                    <PasswordBox x:Name="PbPassword"
                              Grid.Row="7" 
                              Grid.Column="1"
-                             Style="{StaticResource Reg_TbxStyle}"
-                             Text="Иванов"
+                             GotFocus="Pb_GotFocus"
+                             LostFocus="Pb_LostFocus"
+                             Style="{StaticResource Reg_PbxStyle}"
+                             Tag="Password"
                              />
 
                 </Grid>
 
-                <Button Name="btnSignIn" 
+                <Button Name="btnSignUp" 
                         
                         Width="100"
                         Height="30" 
                         Margin="0 40 0 0" 
-                        Content="Войти"
+                        Content="Регистрация"
                         Background="Gray"
                         Foreground="White"
                         BorderThickness="0 0 0 0">
@@ -157,9 +172,9 @@
                     </Button.Resources>
                 </Button>
 
-                <TextBlock x:Name="BtnReg" 
-                           Text="Регистрация"
-                           MouseLeftButtonUp="BtnReg_MouseLeftButtonUp"
+                <TextBlock x:Name="BtnSignIn" 
+                           Text="Авторизация"
+                           MouseLeftButtonUp="BtnSignIn_MouseLeftButtonUp"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Bottom"
                            Margin="0 10 0 0"

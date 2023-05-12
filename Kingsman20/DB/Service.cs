@@ -25,6 +25,7 @@ namespace Kingsman20.DB
         public decimal Price { get; set; }
         public string Description { get; set; }
         public int ServiceTypeID { get; set; }
+        public string ServicePhoto { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderService> OrderService { get; set; }
