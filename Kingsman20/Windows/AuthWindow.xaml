@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Kingsman20.Windows"
         mc:Ignorable="d"
         Title="AuthWindow" Height="400" Width="850">
-    <Grid>
+    <Grid Style="{StaticResource All_GrdStyle}">
         <DockPanel>
             <Image Source="C:\Users\Toadles\source\repos\Kingsman11-20\Kingsman20\Res\dalle_atelier1.jpg" Height="450" Width="385"  />
             <StackPanel Orientation="Vertical" Width="165">
@@ -14,15 +14,16 @@
                            FontSize="28"
                            FontWeight="Bold"
                            HorizontalAlignment="Center"
-                           Margin="0 10 0 0"/>
+                           Margin="0 10 0 0"
+                           Foreground="#6F4C5B"/>
                 <TextBlock Text="Авторизация"
                            FontSize="18"
                            HorizontalAlignment="Center"
-                           Margin="0 60 0 0"/>
+                           Margin="0 60 0 0"
+                           Foreground="#6F4C5B"/>
                 <TextBlock Text="Login"
                            Margin="10 50 0 0"
-                           FontSize="8"
-                           Foreground="Gray"/>
+                           Style="{StaticResource Reg_TbStyle}"/>
                 <TextBox x:Name="TbLogin" 
                          Text="Ваш логин"
                          Width="150" 
@@ -58,7 +59,7 @@
                         Height="30" 
                         Margin="0 40 0 0" 
                         Content="Войти"
-                        Background="Gray"
+                        Background="#9E7777"
                         Foreground="White"
                         BorderThickness="0 0 0 0">
 
@@ -76,7 +77,8 @@
                            HorizontalAlignment="Center"
                            VerticalAlignment="Bottom"
                            Margin="0 10 0 0"
-                           FontSize="8"/>
+                           FontSize="8"
+                           Foreground="#6F4C5B"/>
             </StackPanel>
         </DockPanel>
     </Grid>

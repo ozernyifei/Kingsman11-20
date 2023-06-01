@@ -6,7 +6,95 @@
         xmlns:local="clr-namespace:Kingsman20"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Style="{StaticResource All_GrdStyle}">
+        <DockPanel>
+            <Image Source="C:\Users\Toadles\source\repos\Kingsman11-20\Kingsman20\Res\AtelierLK.jpeg" Height="488" Width="435"  />
+            <StackPanel>
+                <TextBlock Text="Kingsman"
+                           FontSize="28"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"
+                           Margin="0 10 0 0"
+                           Foreground="#6F4C5B"/>
+                <TextBlock Text="Личный кабинет"
+                           FontSize="20"
+                           HorizontalAlignment="Center"
+                           Margin="0 60 0 0"
+                           Foreground="#6F4C5B"/>
+                <Button Name="BtnServiceList"
+                    Width="200"    
+                    Height="30" 
+                    Margin="0 30 0 0"  
+                    Background="#9E7777"
+                    Foreground="White"
+                    BorderThickness="0 0 0 0"
+                    Content="Список услуг"
+                    FontSize="20"
+                    FontFamily="Atelier Grotesk"
+                        Click="BtnServiceList_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" 
+                                        Value="14"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+                <Button Name="BtnClientList"
+                    Width="200"    
+                    Height="30" 
+                    Margin="0 30 0 0" 
+                    Background="#9E7777"
+                    Foreground="White"
+                    BorderThickness="0 0 0 0"
+                    Content="Список клиентов"
+                    FontSize="20"
+                        Click="BtnClientList_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" 
+                                        Value="14"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+
+                <Button Name="BtnEmployeeList"
+                    Width="200"    
+                    Height="30" 
+                    Margin="0 30 0 0"  
+                    Background="#9E7777"
+                    Foreground="White"
+                    BorderThickness="0 0 0 0"
+                    Content="Список сотрудников"
+                    FontSize="20"
+                        Click="BtnEmployeeList_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" 
+                                        Value="14"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+                <Button Name="BtnReportList"
+                    Width="200"    
+                    Height="30" 
+                    Margin="0 30 0 0" 
+                    Background="#9E7777"
+                    Foreground="White"
+                    BorderThickness="0 0 0 0"
+                    Content="Отчёты"
+                    FontSize="20"
+                        Click="BtnReportsList_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" 
+                                        Value="14"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+        </DockPanel>
     </Grid>
 </Window>

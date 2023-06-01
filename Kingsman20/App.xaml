@@ -4,24 +4,59 @@
              xmlns:local="clr-namespace:Kingsman20"
              StartupUri="Windows/AuthWindow.xaml">
     <Application.Resources>
+
+        <Style x:Key="All_GrdStyle" TargetType="Grid">
+            <Setter Property="Background" Value="#F5E8C7"/>
+        </Style>
         <Style x:Key="Reg_TbxStyle" TargetType="TextBox">
             <Setter Property="Height" Value="20"/>
             <Setter Property="Margin" Value="0 0 15 0"/>
-            <Setter Property="Foreground" Value="DarkGray"/>
+            <Setter Property="Foreground" Value="#6F4C5B"/>
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="BorderThickness" Value="0 0 0 1"/>
+            <Setter Property="FontFamily" Value="Atelier Sans"/>
 
+        </Style>
+        <Style x:Key="All_BtnStyle" TargetType="Button">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Background" Value="#9E7777"/>
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+            <Setter Property="BorderThickness" Value="0 0 0 0"/>
+            <Setter Property="FontFamily" Value="Atelier Sans"/>
+            <Setter Property="FontSize" Value="12"/>
+            
+        </Style>
+        <Style x:Key="LV_TbStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Margin" Value="5 3"/>
+            <Setter Property="FontFamily" Value="Atelier Sans"/>
+            <Setter Property="Foreground" Value="#6F4C5B"/>
+        </Style>
+        <Style x:Key="LVw_ItemTmplt_Border" TargetType="Border">
+            <Setter Property="BorderBrush" Value="#9e7777"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="350"/>
+            <Setter Property="Margin" Value="16"/>
+            <Setter Property="CornerRadius" Value="8"/>
+        </Style>
+        <Style x:Key="LstVwStyle" TargetType="ListView">
+            <Setter Property="Background" Value="#F5E8C7"/>
         </Style>
         <Style x:Key="Reg_PbxStyle" TargetType="PasswordBox">
             <Setter Property="Height" Value="20"/>
             <Setter Property="Margin" Value="0 0 15 0"/>
+
             <Setter Property="Foreground" Value="DarkGray"/>
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="BorderThickness" Value="0 0 0 1"/>
+            <Setter Property="FontFamily" Value="Atelier Sans"/>
         </Style>
         <Style x:Key="RegCmbxItemStyle" TargetType="ComboBoxItem">
             <Setter Property="Background" Value="White"/>
             <Setter Property="Foreground" Value="Pink" />
+
             <Style.Triggers>
                 <DataTrigger Binding="{Binding GenderName}" Value="Мужской">
                     <Setter Property="Foreground" Value="Blue" />
@@ -32,14 +67,16 @@
             <Setter Property="Height" Value="20"/>
             <Setter Property="Margin" Value="0 0 15 0"/>
             <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="Background" Value="White"/>
+            <Setter Property="Background" Value="#DEBA9D"/>
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="BorderThickness" Value="0 0 0 1"/>
+            <Setter Property="FontFamily" Value="Atelier Sans"/>
         </Style>
         <Style x:Key="Reg_TbStyle" TargetType="TextBlock">
             <Setter Property="Margin" Value="0 10 0 0"/>
             <Setter Property="Foreground" Value="Gray"/>
             <Setter Property="FontSize" Value="8"/>
+            <Setter Property="FontFamily" Value="Atelier Sans"/>
         </Style>
 
     </Application.Resources>

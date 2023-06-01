@@ -1,15 +1,12 @@
-﻿<Window x:Class="Kingsman20.Windows.ServiceWindow"
+﻿<Window x:Class="Kingsman20.Windows.CartWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kingsman20.Windows"
         mc:Ignorable="d"
-        Title="ServiceWindow" 
-        Height="768" Width="1024"
-        WindowStartupLocation="CenterScreen">
+        Title="CartWindow" Height="768" Width="1024">
     <Grid Style="{StaticResource All_GrdStyle}">
-        
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
@@ -17,33 +14,16 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Список услуг"
-                   FontFamily="Atelier Grotesk"
+        <TextBlock Text="Корзина"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    FontSize="30"
-                   FontWeight="Bold"
-                   Foreground="#6F4C5B"/>
-
-
-        <Button x:Name="BtnGoToCart"
-                Width="40"
-                Height="40"
-                Grid.Row="1"
-                HorizontalAlignment="Right"
-                Margin="0 0 30 0"
-                Background="{x:Null}"
-                BorderThickness="0"
-                Click="BtnGoToCart_Click">
-            <Image Source="/Res/Icons/icons8-shopping-cart-30.png" />
-        </Button>
-
-
-        <ListView x:Name="LvService"
+                   FontWeight="Bold"/>
+        <ListView x:Name="LvCartService" 
                   Background="#F5E8C7"
                   Grid.Row="2" 
                   d:ItemsSource="{d:SampleData ItemCount=5}"
-                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="LvService_SelectionChanged">
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -73,29 +53,19 @@
                                        Style="{StaticResource LV_TbStyle}"/>
                             <TextBlock Text="{Binding Description}"
                                        Style="{StaticResource LV_TbStyle}"
-                                       FontWeight="Bold"/>
+                                       FontWeight="Bold"  />
 
-                            <WrapPanel HorizontalAlignment="Center">
-                                <Button x:Name="BtnEdit"
-                                    Width="40"
-                                    Height="40"
-                                    HorizontalAlignment="Left"
-                                    Margin="10 5 30 0"
-                                    Background="{x:Null}"
-                                    BorderThickness="0"
-                                    Click="BtnEdit_Click">
-                                    <Image Source="/Res/Icons/icons8-edit-64.png"/>
-                                </Button>
+                            <WrapPanel HorizontalAlignment="Right">
 
-                                <Button x:Name="BtnAddToCart"
+                                <Button x:Name="BtnRomoveToCart"
                                     Width="40"
                                     Height="40"
                                     HorizontalAlignment="Left"
                                     Margin="30 5 0 0"
                                     Background="{x:Null}"
                                     BorderThickness="0"
-                                    Click="BtnAddToCart_Click">
-                                    <Image Source="/Res/Icons/icons8-shopping-cart-30.png" />
+                                    Click="BtnRomoveToCart_Click">
+                                    <Image Source="/Res/icons8-remove-50.png" />
                                 </Button>
                             </WrapPanel>
 
@@ -107,16 +77,31 @@
         </ListView>
 
 
-        <Button x:Name="BtnAddService"
+        <Button x:Name="BtnBack"
+                Content="Назад"
+                FontSize="18"
                 Grid.Row="3"
-                Width="40"
+                Width="100"
                 Height="40"
                 Background="{x:Null}"
                 BorderThickness="0"
-                HorizontalAlignment="Right"
+                HorizontalAlignment="Left"
+                Click="BtnBack_Click">
+
+        </Button>
+
+        <Button x:Name="BtnPay"
+                Content="Оформить заказ"
+                FontSize="18"
+                Grid.Row="3"
+                Width="200"
+                Height="40"
+                Background="{x:Null}"
+                BorderThickness="0"
                 Margin="0 0 20 0"
-                Click="BtnAddService_Click">
-            <Image Source="/Res/Icons/icons8-add-80.png"/>
+                HorizontalAlignment="Right"
+                Click="BtnPay_Click">
+
         </Button>
     </Grid>
 </Window>

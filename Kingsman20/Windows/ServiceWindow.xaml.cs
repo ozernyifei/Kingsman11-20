@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kingsman20.ClassHelper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,10 +52,37 @@ namespace Kingsman20.Windows
             var service = button.DataContext as DB.Service; // получаем выбранную запись
 
 
-            EditServiceWindow editServiceWindow = new EditServiceWindow(service);
-            editServiceWindow.ShowDialog();
+            AddServiceWindow addServiceWindow = new AddServiceWindow(service);
+            addServiceWindow.ShowDialog();
 
             GetListService();
+
+
+        }
+        private void BtnAddToCart_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button == null)
+            {
+                return;
+            }
+            var service = button.DataContext as DB.Service; // получаем выбранную запись
+
+
+            CartServiceClass.ServiceCart.Add(service);
+
+            MessageBox.Show($"Услуга {service.ServiceName} добавлена в корзину!");
+        }
+
+        private void BtnGoToCart_Click(object sender, RoutedEventArgs e)
+        {
+            CartWindow cartWindow = new CartWindow();
+            cartWindow.ShowDialog();
+        }
+
+        private void LvService_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

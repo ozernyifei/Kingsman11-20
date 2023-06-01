@@ -19,6 +19,9 @@ namespace Kingsman20.Windows
     /// </summary>
     public partial class AuthWindow : Window
     {
+
+        DB.Employee authEmployee = null;
+        DB.Client authClient = null;
         public AuthWindow()
         {
             InitializeComponent();
@@ -66,21 +69,33 @@ namespace Kingsman20.Windows
         }
         private void BtnSignIn_Click(object sender, RoutedEventArgs e)
         {
-            // проверка на наличие пользователя
-            var userAuth = ClassHelper.EF.Context.Client.ToList().
-                Where(i => i.Login == TbLogin.Text && i.Password == PbPassword.Password).
-                FirstOrDefault();
-            if (userAuth != null)
+            if ((string.IsNullOrEmpty(PbPassword.Password) || PbPassword.Password != Convert.ToString(PbPassword.Tag)) && (string.IsNullOrEmpty(TbLogin.Text) || TbLogin.Text != Convert.ToString(TbLogin.Tag)))
             {
-                // переход на окно список услуг
-                ServiceWindow serviceWindow = new ServiceWindow();
-                serviceWindow.Show();
-                this.Close();
-            }
-            else
-            {
-                // если пользователь не найден
-                MessageBox.Show("Пользователя не существует", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                authEmployee = ClassHelper.EF.Context.Employee.ToList().Where(i => i.Password == PbPassword.Password && i.Login == TbLogin.Text).FirstOrDefault();
+                authClient = ClassHelper.EF.Context.Client.ToList().Where(i => i.Password == PbPassword.Password && i.Login == TbLogin.Text).FirstOrDefault();
+
+                if (authEmployee != null)
+                {
+                    MainWindow mainWindow = new MainWindow();
+                    this.Close();
+                    mainWindow.ShowDialog();
+
+                    ClassHelper.UserDataClass.SavedEmployee = authEmployee;
+                }
+                else if (authClient != null)
+                {
+
+                    MainWindow mainWindow = new MainWindow();
+                    this.Close();
+                    mainWindow.ShowDialog();
+
+                    ClassHelper.UserDataClass.SavedClient = authClient;
+                }
+                else
+                {
+                    // если пользователь не найден
+                    MessageBox.Show("Пользователя не существует", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
 

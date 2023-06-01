@@ -13,6 +13,7 @@
         
         <StackPanel VerticalAlignment="Center">
             <TextBlock Text="Регистрация"
+                       FontFamily="Verdana"
                        FontSize="28"
                        FontWeight="Bold"
                        HorizontalAlignment="Center"

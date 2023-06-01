@@ -8,10 +8,11 @@
         Title="AddServiceWindow" 
         WindowStartupLocation="CenterScreen"
         Height="800" Width="500">
-    <Grid>
+    <Grid Style="{StaticResource All_GrdStyle}">
 
         <StackPanel VerticalAlignment="Center">
             <TextBlock Text="Добавление услуги"
+                       Style="{StaticResource LV_TbStyle}"
                        FontSize="28"
                        FontWeight="Bold"
                        HorizontalAlignment="Center"
@@ -26,14 +27,21 @@
             </Border>
             <Button x:Name="BtnChooseImage" 
                     Content="Выбрать изображение"
-                    FontSize="16"                    
-                    Width="200"
-                    Height="40"
+                    Style="{StaticResource All_BtnStyle}"
+                    Width="150"
+                    Height="30"
                     Margin="0 8 0 0"
-                    Click="BtnChooseImage_Click"/>
+                    Click="BtnChooseImage_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" 
+                                        Value="14"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
 
             <TextBlock Text="Введите наименование услуги"
-                       FontSize="18"
+                       Style="{StaticResource LV_TbStyle}"
                        HorizontalAlignment="Center"
                        Margin="0 50 0 0"/>
             <TextBox x:Name="TbNameService"
@@ -43,7 +51,7 @@
                      Margin="0 8 0 0"/>
 
             <TextBlock Text="Введите описание услуги"
-                       FontSize="18"
+                       Style="{StaticResource LV_TbStyle}"
                        HorizontalAlignment="Center"
                        Margin="0 16 0 0"/>
             <TextBox x:Name="TbDiscService"
@@ -53,7 +61,7 @@
                          Margin="0 8 0 0"/>
 
             <TextBlock Text="Введите цена услуги"
-                       FontSize="18"
+                       Style="{StaticResource LV_TbStyle}"
                        HorizontalAlignment="Center"
                        Margin="0 16 0 0"/>
             <TextBox x:Name="TbPriceService"
@@ -65,7 +73,7 @@
             
 
             <TextBlock Text="Выберите тип услуги"
-                       FontSize="18"
+                       Style="{StaticResource LV_TbStyle}"
                        HorizontalAlignment="Center"
                        Margin="0 16 0 0"/>
             <ComboBox x:Name="CmbTypeService"
@@ -76,11 +84,16 @@
 
             <Button x:Name="BtnAddService" 
                     Content="Добавить"
-                    FontSize="18"                    
-                    Width="150"
-                    Height="40"
+                    Style="{StaticResource All_BtnStyle}"
                     Margin="0 40 0 0"
-                    Click="BtnAddService_Click"/>
+                    Click="BtnAddService_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" 
+                                        Value="14"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
         </StackPanel>
 
       

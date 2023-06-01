@@ -8,6 +8,8 @@ namespace Kingsman20.ClassHelper
 {
     internal class UserDataClass
     {
-        public static DB.Employee Employee { get; set; } = new DB.Employee();
+        public static DB.Employee SavedEmployee { get; set; } = new DB.Employee();
+
+        public static DB.Client SavedClient { get; set; } = new DB.Client();
     }
 }
